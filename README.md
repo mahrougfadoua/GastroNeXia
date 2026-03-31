@@ -1,0 +1,2 @@
+# GastroVisIA
+ai detection system
