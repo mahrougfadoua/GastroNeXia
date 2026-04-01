@@ -2,7 +2,7 @@
 "use client";
 
 import { useState } from "react";
-import Ico from "@/components/ui/Ico";
+import Ico from "@/components/ui/ico";
 import { I } from "@/lib/icons";
 
 export default function AuthPage() {

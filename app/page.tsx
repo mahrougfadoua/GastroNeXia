@@ -5,6 +5,9 @@ import Ico from "@/components/ui/ico";
 import RiskBadge from "@/components/ui/riskbadge";
 import { I } from "@/lib/icons";
 import { cases } from "@/lib/data";
+import { redirect } from 'next/navigation';
+
+ 
 
 const features = [
   { ico: "zap",     title: "Real-time Detection",  desc: "Frame-by-frame lesion detection at <50ms latency",    color: "#1D4ED8" },
@@ -20,10 +23,12 @@ const quickActions = [
 ];
 
 export default function HomePage() {
+
+   redirect('/welcome');
+  
   return (
     <div style={{ flex: 1, overflowY: "auto", padding: "24px 32px", display: "flex", flexDirection: "column", gap: 28 }}>
       
-      {/* 2. Massive Hero Section - تم تكبير الحجم هنا */}
       <div className="card fade-up" style={{ 
         padding: "80px 60px", // زيادة الـ Padding لتكبير المساحة
         background: "linear-gradient(105deg, #020617 0%, #1E3A8A 40%, #2563EB 100%)", 
