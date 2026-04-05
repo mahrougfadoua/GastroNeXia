@@ -90,8 +90,10 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function AuthPage() {
+  const router = useRouter();
   const [tab, setTab]   = useState<"login" | "register">("login");
   const [show, setShow] = useState(false);
 
@@ -123,7 +125,6 @@ export default function AuthPage() {
               "Real-time AI detection at <50ms",
               "Multi-class lesion classification",
               "Auto-generated clinical PDF reports",
-              "HIPAA compliant & secure",
             ].map((f) => (
               <div key={f} className="af-item">
                 <span className="af-dot" />
@@ -195,10 +196,13 @@ export default function AuthPage() {
                 <a href="#" className="forgot">Forgot password?</a>
               </div>
 
-              <button className="btn-submit">Sign In to Platform</button>
-              <p className="hipaa">
-                Secure medical platform — <span>HIPAA compliant</span>
-              </p>
+              {/* <button className="btn-submit">Sign In to Platform</button> */}
+              <button
+              className="btn-submit"
+              onClick={() => router.push("/dashboard")}
+            >
+              Sign In to Platform
+            </button>
             </div>
           )}
 
